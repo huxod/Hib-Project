@@ -3,17 +3,18 @@ package Edu;
 import javax.persistence.*;
 
 /**
- * Created by hubert on 13.11.2017.
+ * Created by hubert on 14.11.2017.
  */
 @Entity
-@Table(name = "users", schema = "public", catalog = "Edu")
-public class EduUsersEntity {
+public class Users {
     private int id;
     private String name;
     private String email;
     private String password;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq")
+    @SequenceGenerator(name = "users_seq", sequenceName = "users_id_seq")
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
@@ -58,12 +59,12 @@ public class EduUsersEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        EduUsersEntity that = (EduUsersEntity) o;
+        Users users = (Users) o;
 
-        if (id != that.id) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+        if (id != users.id) return false;
+        if (name != null ? !name.equals(users.name) : users.name != null) return false;
+        if (email != null ? !email.equals(users.email) : users.email != null) return false;
+        if (password != null ? !password.equals(users.password) : users.password != null) return false;
 
         return true;
     }

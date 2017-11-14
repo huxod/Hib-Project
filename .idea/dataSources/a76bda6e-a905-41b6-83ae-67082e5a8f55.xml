@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-11-13.08:43:27.809</IntrospectionTimestamp>
-      <IntrospectionStateNumber>852</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-11-13.23:54:37.307</IntrospectionTimestamp>
+      <IntrospectionStateNumber>862</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -39,7 +39,11 @@
       <ObjectId>41057</ObjectId>
       <StateNumber>851</StateNumber>
     </table>
-    <column id="11" parent="10" name="id">
+    <table id="11" parent="3" name="words">
+      <ObjectId>41064</ObjectId>
+      <StateNumber>862</StateNumber>
+    </table>
+    <column id="12" parent="10" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -47,39 +51,51 @@
       <SequenceName>users_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="12" parent="10" name="name">
+    <column id="13" parent="10" name="name">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>851</StateNumber>
     </column>
-    <column id="13" parent="10" name="email">
+    <column id="14" parent="10" name="email">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>851</StateNumber>
     </column>
-    <column id="14" parent="10" name="password">
+    <column id="15" parent="10" name="password">
       <Position>4</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>851</StateNumber>
     </column>
-    <index id="15" parent="10" name="users_pkey">
+    <index id="16" parent="10" name="users_pkey">
       <ObjectId>41061</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="16" parent="10" name="users_email_uindex">
+    <index id="17" parent="10" name="users_email_uindex">
       <ObjectId>41063</ObjectId>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="17" parent="10" name="users_pkey">
+    <key id="18" parent="10" name="users_pkey">
       <ObjectId>41062</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
+    <column id="19" parent="11" name="englsh">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>862</StateNumber>
+    </column>
+    <column id="20" parent="11" name="polish">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>862</StateNumber>
+    </column>
   </database-model>
 </dataSource>

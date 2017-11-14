@@ -1,31 +1,42 @@
 package Edu;
 
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.hibernate.jpa.HibernatePersistenceProvider;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.spi.PersistenceProvider;
+import java.util.HashMap;
 
 /**
  * Created by hubert on 13.11.2017.
  */
 public class TestHibernateInsert {
 
-    SessionFactory sessionFactory;
     public static void main(String[] args){
-        EduUsersEntity usr = new EduUsersEntity();
-        usr.setName("John");
-        usr.setEmail("John@lin.pl");
-        usr.setPassword("paswd");
+        Users usre = new Users();
+        usre.setName("Hubert");
+        usre.setEmail("hub@lin.pl");
+        usre.setPassword("paswd");
 
-        EntityManagerFactory ent = Persistence.createEntityManagerFactory( "NewPersistenceUnit");
+        Users usr = new Users();
+        usr.setName("Adam");
+        usr.setEmail("ada@lin.pl");
+        usr.setPassword("passwdord");
+
+        Users usra = new Users();
+        usra.setName("Adam");
+        usra.setEmail("ada@lin.pl");
+        usra.setPassword("passwdord");
+
+        PersistenceProvider persistenceProvider = new HibernatePersistenceProvider();
+        EntityManagerFactory ent = Persistence.createEntityManagerFactory( "Edu" , new HashMap());
         EntityManager entityManager = ent.createEntityManager();
         entityManager.getTransaction().begin();
-        entityManager.persist(usr);
+
+        // Get a List of Students
+        entityManager.persist(usra);
         entityManager.getTransaction().commit();
         entityManager.close();
-
     }
 }

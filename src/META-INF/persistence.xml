@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
 
-    <persistence-unit name="NewPersistenceUnit">
+    <persistence-unit name="Edu">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>Edu.EduUsersEntity</class>
+        <class>Edu.Users</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/Edu"/>
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
-            <property name="hibernate.connection.username" value=""/>
-            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.connection.username" value="Edu Admin"/>
+            <property name="hibernate.connection.password" value="Wiktor@2012"/>
             <property name="hibernate.archive.autodetection" value="class"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.id.new_generator_mappings" value="true" />
             <property name="hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
