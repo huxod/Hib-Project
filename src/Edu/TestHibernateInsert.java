@@ -25,15 +25,14 @@ public class TestHibernateInsert {
         usr.setPassword("passwdord");
 
         Users usra = new Users();
-        usra.setName("Adam");
-        usra.setEmail("ada@lin.pl");
+        usra.setName("huldam");
+        usra.setEmail("hulada@lin.pl");
         usra.setPassword("passwdord");
 
-        PersistenceProvider persistenceProvider = new HibernatePersistenceProvider();
+
         EntityManagerFactory ent = Persistence.createEntityManagerFactory( "Edu" , new HashMap());
         EntityManager entityManager = ent.createEntityManager();
         entityManager.getTransaction().begin();
-
         // Get a List of Students
         entityManager.persist(usra);
         entityManager.getTransaction().commit();
