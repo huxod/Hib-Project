@@ -11,6 +11,6 @@
     <title>Edu-odo</title>
   </head>
   <body>
-  <h1>Hello my frend</h1>
+  <h1>Hello my friend</h1>
   </body>
 </html>
