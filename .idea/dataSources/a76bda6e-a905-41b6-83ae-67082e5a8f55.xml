@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-11-13.23:54:37.307</IntrospectionTimestamp>
-      <IntrospectionStateNumber>862</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-01-07.15:04:14.622</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1140</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -30,72 +30,96 @@
       <ObjectId>12113</ObjectId>
     </schema>
     <sequence id="9" parent="3" name="users_id_seq">
-      <ObjectId>41055</ObjectId>
-      <StateNumber>851</StateNumber>
+      <ObjectId>41078</ObjectId>
+      <StateNumber>874</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <table id="10" parent="3" name="users">
-      <ObjectId>41057</ObjectId>
-      <StateNumber>851</StateNumber>
+      <ObjectId>41080</ObjectId>
+      <StateNumber>897</StateNumber>
     </table>
     <table id="11" parent="3" name="words">
-      <ObjectId>41064</ObjectId>
-      <StateNumber>862</StateNumber>
+      <ObjectId>41645</ObjectId>
+      <StateNumber>1140</StateNumber>
     </table>
     <column id="12" parent="10" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>851</StateNumber>
-      <SequenceName>users_id_seq</SequenceName>
+      <StateNumber>874</StateNumber>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="13" parent="10" name="name">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>851</StateNumber>
+      <StateNumber>874</StateNumber>
     </column>
     <column id="14" parent="10" name="email">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>851</StateNumber>
+      <StateNumber>874</StateNumber>
     </column>
     <column id="15" parent="10" name="password">
       <Position>4</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>851</StateNumber>
+      <StateNumber>874</StateNumber>
     </column>
-    <index id="16" parent="10" name="users_pkey">
-      <ObjectId>41061</ObjectId>
+    <column id="16" parent="10" name="timestamp">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>897</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+    </column>
+    <index id="17" parent="10" name="users_pkey">
+      <ObjectId>41084</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="17" parent="10" name="users_email_uindex">
-      <ObjectId>41063</ObjectId>
+    <index id="18" parent="10" name="users_email_key">
+      <ObjectId>41093</ObjectId>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="18" parent="10" name="users_pkey">
-      <ObjectId>41062</ObjectId>
+    <key id="19" parent="10" name="users_pkey">
+      <ObjectId>41085</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="19" parent="11" name="englsh">
+    <key id="20" parent="10" name="users_email_key">
+      <ObjectId>41094</ObjectId>
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>users_email_key</UnderlyingIndexName>
+    </key>
+    <column id="21" parent="11" name="id">
       <Position>1</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>862</StateNumber>
+      <StateNumber>1140</StateNumber>
     </column>
-    <column id="20" parent="11" name="polish">
+    <column id="22" parent="11" name="english">
       <Position>2</Position>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>862</StateNumber>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1140</StateNumber>
     </column>
+    <column id="23" parent="11" name="polish">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1140</StateNumber>
+    </column>
+    <index id="24" parent="11" name="words_pkey">
+      <ObjectId>41651</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="25" parent="11" name="words_pkey">
+      <ObjectId>41652</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>words_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

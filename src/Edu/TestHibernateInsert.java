@@ -1,40 +1,46 @@
 package Edu;
 
-import org.hibernate.jpa.HibernatePersistenceProvider;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.spi.PersistenceProvider;
+import javax.persistence.*;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Properties;
 
 /**
  * Created by hubert on 13.11.2017.
  */
+
 public class TestHibernateInsert {
 
+
     public static void main(String[] args){
-        Users usre = new Users();
-        usre.setName("Hubert");
-        usre.setEmail("hub@lin.pl");
-        usre.setPassword("paswd");
 
-        Users usr = new Users();
-        usr.setName("Adam");
-        usr.setEmail("ada@lin.pl");
-        usr.setPassword("passwdord");
+        TestWords test = new TestWords();
 
-        Users usra = new Users();
-        usra.setName("huldam");
-        usra.setEmail("hulada@lin.pl");
-        usra.setPassword("passwdord");
+        test.setId(2);
+        test.setEnglish("btete");
+        test.setPolish("nieteteski");
 
+        final Properties persistanceProperties = new Properties();
 
+        Persistence.generateSchema("Edu", persistanceProperties);
         EntityManagerFactory ent = Persistence.createEntityManagerFactory( "Edu" , new HashMap());
         EntityManager entityManager = ent.createEntityManager();
+        //Scalar function
+/*        javax.persistence.Query query = entityManager.
+                createQuery("Select upper(test.english)  from Test test");
+        String test = String.valueOf(query.getSingleResult());
+
+
+            System.out.println("Employee NAME :"+test);*/
+
+
         entityManager.getTransaction().begin();
         // Get a List of Students
-        entityManager.persist(usra);
+        test.setId(1);
+        test.setEnglish("beetrner");
+        test.setPolish("poertjący");
+        entityManager.persist(test);
+        entityManager.merge(test);
         entityManager.getTransaction().commit();
         entityManager.close();
     }

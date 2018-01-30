@@ -7,5 +7,13 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/Edu</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="Edu/Hibernate" uuid="8a2b3db6-ab8c-45cf-a006-a864b399dca2">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/src/META-INF/persistence.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/Edu</jdbc-url>
+    </data-source>
   </component>
 </project>
